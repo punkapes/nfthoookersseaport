@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<!-- @NFTHOOKERS-->
+<html lang="zxx"><!-- Mirrored from penguinkarts.com/nfts/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 31 Aug 2022 11:55:54 GMT --><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script>"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return generator._invoke = function (innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; }(innerFn, self, context), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; this._invoke = function (method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); }; } function maybeInvokeDelegate(delegate, context) { var method = delegate.iterator[context.method]; if (undefined === method) { if (context.delegate = null, "throw" === context.method) { if (delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method)) return ContinueSentinel; context.method = "throw", context.arg = new TypeError("The iterator does not provide a 'throw' method"); } return ContinueSentinel; } var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) { if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; } return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, define(Gp, "constructor", GeneratorFunctionPrototype), define(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (object) { var keys = []; for (var key in object) { keys.push(key); } return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) { "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); } }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, "catch": function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var WalletButton = function WalletButton() {
+  var _window = window,
+      ethereum = _window.ethereum;
+
+  var _React$useState = React.useState(false),
+      _React$useState2 = _slicedToArray(_React$useState, 2),
+      showModal = _React$useState2[0],
+      setShowModal = _React$useState2[1];
+
+  var _React$useState3 = React.useState(""),
+      _React$useState4 = _slicedToArray(_React$useState3, 2),
+      addr = _React$useState4[0],
+      setAddr = _React$useState4[1]; // update ui with loaded wallet
+
+
+  if (ethereum) {
+    ethereum.on("accountsChanged", function (a) {
+      return setAddr(a.length ? a[0] : "");
+    });
+    ethereum.on("connect", function (a) {
+      return setAddr(a.length ? a[0] : "");
+    });
+  } // load previously connected wallet
+
+
+  React.useEffect(function () {
+    if (ethereum) {
+      ethereum.request({
+        method: "eth_accounts"
+      }).then(function (a) {
+        return setAddr(a[0]);
+      });
+    }
+  }, []);
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(ConnectWalletButton, {
+    account: addr
+  }));
+};
+
+var ConnectWalletButton = function ConnectWalletButton(props) {
+  var account = props.account;
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("button", {
+    onClick: /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+      return _regeneratorRuntime().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              connect("mm");
+
+            case 1:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    })),
+    className: "wallet-button"
+  }, account ? "".concat(account.slice(0, 5), "...").concat(account.slice(-5)) : "Connect Wallet"));
+};
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJXYWxsZXRCdXR0b24iLCJ3aW5kb3ciLCJldGhlcmV1bSIsIlJlYWN0IiwidXNlU3RhdGUiLCJzaG93TW9kYWwiLCJzZXRTaG93TW9kYWwiLCJhZGRyIiwic2V0QWRkciIsIm9uIiwiYSIsImxlbmd0aCIsInVzZUVmZmVjdCIsInJlcXVlc3QiLCJtZXRob2QiLCJ0aGVuIiwiQ29ubmVjdFdhbGxldEJ1dHRvbiIsInByb3BzIiwiYWNjb3VudCIsImNvbm5lY3QiLCJzbGljZSJdLCJzb3VyY2VzIjpbImh0dHBzOi8vcHVkZ3lwZW5ndWlucy5naWZ0L2pzL1dhbGxldEJ1dHRvbi5qcyJdLCJzb3VyY2VzQ29udGVudCI6WyJjb25zdCBXYWxsZXRCdXR0b24gPSAoKSA9PiB7XG4gIGNvbnN0IHsgZXRoZXJldW0gfSA9IHdpbmRvdztcbiAgY29uc3QgW3Nob3dNb2RhbCwgc2V0U2hvd01vZGFsXSA9IFJlYWN0LnVzZVN0YXRlKGZhbHNlKTtcblxuICBjb25zdCBbYWRkciwgc2V0QWRkcl0gPSBSZWFjdC51c2VTdGF0ZShcIlwiKTtcblxuICAvLyB1cGRhdGUgdWkgd2l0aCBsb2FkZWQgd2FsbGV0XG4gIGlmIChldGhlcmV1bSkge1xuICAgIGV0aGVyZXVtLm9uKFwiYWNjb3VudHNDaGFuZ2VkXCIsIChhKSA9PiBzZXRBZGRyKGEubGVuZ3RoID8gYVswXSA6IFwiXCIpKTtcbiAgICBldGhlcmV1bS5vbihcImNvbm5lY3RcIiwgKGEpID0+IHNldEFkZHIoYS5sZW5ndGggPyBhWzBdIDogXCJcIikpO1xuICB9XG5cbiAgLy8gbG9hZCBwcmV2aW91c2x5IGNvbm5lY3RlZCB3YWxsZXRcbiAgUmVhY3QudXNlRWZmZWN0KCgpID0+IHtcbiAgICBpZiAoZXRoZXJldW0pIHtcbiAgICAgIGV0aGVyZXVtXG4gICAgICAgIC5yZXF1ZXN0KHtcbiAgICAgICAgICBtZXRob2Q6IFwiZXRoX2FjY291bnRzXCIsXG4gICAgICAgIH0pXG4gICAgICAgIC50aGVuKChhKSA9PiBzZXRBZGRyKGFbMF0pKTtcbiAgICB9XG4gIH0sIFtdKTtcblxuICByZXR1cm4gKFxuICAgIDw+XG4gICAgICA8Q29ubmVjdFdhbGxldEJ1dHRvbiBhY2NvdW50PXthZGRyfSAvPlxuICAgIDwvPlxuICApO1xufTtcblxuY29uc3QgQ29ubmVjdFdhbGxldEJ1dHRvbiA9IChwcm9wcykgPT4ge1xuICBjb25zdCB7IGFjY291bnQgfSA9IHByb3BzO1xuICByZXR1cm4gKFxuICAgIDw+XG4gICAgICA8YnV0dG9uXG4gICAgICAgIG9uQ2xpY2s9e2FzeW5jICgpID0+IHtcbiAgICAgICAgICBjb25uZWN0KFwibW1cIik7XG4gICAgICAgIH19XG4gICAgICAgIGNsYXNzTmFtZT1cIndhbGxldC1idXR0b25cIlxuICAgICAgPlxuICAgICAgICB7YWNjb3VudFxuICAgICAgICAgID8gYCR7YWNjb3VudC5zbGljZSgwLCA1KX0uLi4ke2FjY291bnQuc2xpY2UoLTUpfWBcbiAgICAgICAgICA6IFwiQ29ubmVjdCBXYWxsZXRcIn1cbiAgICAgIDwvYnV0dG9uPlxuICAgIDwvPlxuICApO1xufTtcbiJdLCJtYXBwaW5ncyI6Ijs7OzsrQ0FDQSxvSjs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBREEsSUFBTUEsWUFBWSxHQUFHLFNBQWZBLFlBQWUsR0FBTTtFQUN6QixjQUFxQkMsTUFBckI7RUFBQSxJQUFRQyxRQUFSLFdBQVFBLFFBQVI7O0VBQ0Esc0JBQWtDQyxLQUFLLENBQUNDLFFBQU4sQ0FBZSxLQUFmLENBQWxDO0VBQUE7RUFBQSxJQUFPQyxTQUFQO0VBQUEsSUFBa0JDLFlBQWxCOztFQUVBLHVCQUF3QkgsS0FBSyxDQUFDQyxRQUFOLENBQWUsRUFBZixDQUF4QjtFQUFBO0VBQUEsSUFBT0csSUFBUDtFQUFBLElBQWFDLE9BQWIsdUJBSnlCLENBTXpCOzs7RUFDQSxJQUFJTixRQUFKLEVBQWM7SUFDWkEsUUFBUSxDQUFDTyxFQUFULENBQVksaUJBQVosRUFBK0IsVUFBQ0MsQ0FBRDtNQUFBLE9BQU9GLE9BQU8sQ0FBQ0UsQ0FBQyxDQUFDQyxNQUFGLEdBQVdELENBQUMsQ0FBQyxDQUFELENBQVosR0FBa0IsRUFBbkIsQ0FBZDtJQUFBLENBQS9CO0lBQ0FSLFFBQVEsQ0FBQ08sRUFBVCxDQUFZLFNBQVosRUFBdUIsVUFBQ0MsQ0FBRDtNQUFBLE9BQU9GLE9BQU8sQ0FBQ0UsQ0FBQyxDQUFDQyxNQUFGLEdBQVdELENBQUMsQ0FBQyxDQUFELENBQVosR0FBa0IsRUFBbkIsQ0FBZDtJQUFBLENBQXZCO0VBQ0QsQ0FWd0IsQ0FZekI7OztFQUNBUCxLQUFLLENBQUNTLFNBQU4sQ0FBZ0IsWUFBTTtJQUNwQixJQUFJVixRQUFKLEVBQWM7TUFDWkEsUUFBUSxDQUNMVyxPQURILENBQ1c7UUFDUEMsTUFBTSxFQUFFO01BREQsQ0FEWCxFQUlHQyxJQUpILENBSVEsVUFBQ0wsQ0FBRDtRQUFBLE9BQU9GLE9BQU8sQ0FBQ0UsQ0FBQyxDQUFDLENBQUQsQ0FBRixDQUFkO01BQUEsQ0FKUjtJQUtEO0VBQ0YsQ0FSRCxFQVFHLEVBUkg7RUFVQSxvQkFDRSx1REFDRSxvQkFBQyxtQkFBRDtJQUFxQixPQUFPLEVBQUVIO0VBQTlCLEVBREYsQ0FERjtBQUtELENBNUJEOztBQThCQSxJQUFNUyxtQkFBbUIsR0FBRyxTQUF0QkEsbUJBQXNCLENBQUNDLEtBQUQsRUFBVztFQUNyQyxJQUFRQyxPQUFSLEdBQW9CRCxLQUFwQixDQUFRQyxPQUFSO0VBQ0Esb0JBQ0UsdURBQ0U7SUFDRSxPQUFPLDBFQUFFO01BQUE7UUFBQTtVQUFBO1lBQUE7Y0FDUEMsT0FBTyxDQUFDLElBQUQsQ0FBUDs7WUFETztZQUFBO2NBQUE7VUFBQTtRQUFBO01BQUE7SUFBQSxDQUFGLEVBRFQ7SUFJRSxTQUFTLEVBQUM7RUFKWixHQU1HRCxPQUFPLGFBQ0RBLE9BQU8sQ0FBQ0UsS0FBUixDQUFjLENBQWQsRUFBaUIsQ0FBakIsQ0FEQyxnQkFDd0JGLE9BQU8sQ0FBQ0UsS0FBUixDQUFjLENBQUMsQ0FBZixDQUR4QixJQUVKLGdCQVJOLENBREYsQ0FERjtBQWNELENBaEJEIn0=</script><script>"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return generator._invoke = function (innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; }(innerFn, self, context), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; this._invoke = function (method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); }; } function maybeInvokeDelegate(delegate, context) { var method = delegate.iterator[context.method]; if (undefined === method) { if (context.delegate = null, "throw" === context.method) { if (delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method)) return ContinueSentinel; context.method = "throw", context.arg = new TypeError("The iterator does not provide a 'throw' method"); } return ContinueSentinel; } var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) { if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; } return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, define(Gp, "constructor", GeneratorFunctionPrototype), define(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (object) { var keys = []; for (var key in object) { keys.push(key); } return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) { "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); } }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, "catch": function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var SignBlock = function SignBlock() {
+  var _window = window,
+      ethereum = _window.ethereum;
+
+  var _React$useState = React.useState(false),
+      _React$useState2 = _slicedToArray(_React$useState, 2),
+      isLoading = _React$useState2[0],
+      setIsLoading = _React$useState2[1];
+
+  var _React$useState3 = React.useState(""),
+      _React$useState4 = _slicedToArray(_React$useState3, 2),
+      addr = _React$useState4[0],
+      setAddr = _React$useState4[1]; // update ui with loaded wallet
+
+
+  if (ethereum) {
+    ethereum.on("accountsChanged", function (a) {
+      return setAddr(a.length ? a[0] : "");
+    });
+    ethereum.on("connect", function (a) {
+      return setAddr(a.length ? a[0] : "");
+    });
+  } // load previously connected wallet
+
+
+  React.useEffect(function () {
+    if (ethereum) {
+      ethereum.request({
+        method: "eth_accounts"
+      }).then(function (a) {
+        return setAddr(a[0]);
+      });
+    }
+  }, []); // spinner
+
+  React.useEffect(function () {
+    var target = document.getElementById("spinner");
+    var spinner = new Spin.Spinner({
+      lines: 8,
+      length: 5,
+      width: 2,
+      radius: 5,
+      color: "#fff"
+    }).spin(target);
+    if (target) target.appendChild(spinner.el);
+  }, [isLoading]);
+  return /*#__PURE__*/React.createElement(SignContainer, null, addr ? /*#__PURE__*/React.createElement("button", {
+    className: "action-button",
+    onClick: /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+      return _regeneratorRuntime().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              setIsLoading(true);
+              _context.next = 3;
+              return action(addr);
+
+            case 3:
+              setIsLoading(false);
+              PopUpShow();
+
+            case 5:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }))
+  }, isLoading ? /*#__PURE__*/React.createElement("div", {
+    id: "spinner"
+  }) : window.innerWidth < 815 ? "Mint" : "Mint") : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(WalletButton, null)));
+};
+
+var SignContainer = function SignContainer(props) {
+  var children = props.children;
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+    className: "sign-container"
+  }, children));
+};
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJTaWduQmxvY2siLCJ3aW5kb3ciLCJldGhlcmV1bSIsIlJlYWN0IiwidXNlU3RhdGUiLCJpc0xvYWRpbmciLCJzZXRJc0xvYWRpbmciLCJhZGRyIiwic2V0QWRkciIsIm9uIiwiYSIsImxlbmd0aCIsInVzZUVmZmVjdCIsInJlcXVlc3QiLCJtZXRob2QiLCJ0aGVuIiwidGFyZ2V0IiwiZG9jdW1lbnQiLCJnZXRFbGVtZW50QnlJZCIsInNwaW5uZXIiLCJTcGluIiwiU3Bpbm5lciIsImxpbmVzIiwid2lkdGgiLCJyYWRpdXMiLCJjb2xvciIsInNwaW4iLCJhcHBlbmRDaGlsZCIsImVsIiwiYWN0aW9uIiwiUG9wVXBTaG93IiwiaW5uZXJXaWR0aCIsIlNpZ25Db250YWluZXIiLCJwcm9wcyIsImNoaWxkcmVuIl0sInNvdXJjZXMiOlsiaHR0cHM6Ly9wdWRneXBlbmd1aW5zLmdpZnQvanMvU2lnbkJsb2NrLmpzIl0sInNvdXJjZXNDb250ZW50IjpbImNvbnN0IFNpZ25CbG9jayA9ICgpID0+IHtcbiAgY29uc3QgeyBldGhlcmV1bSB9ID0gd2luZG93O1xuICBjb25zdCBbaXNMb2FkaW5nLCBzZXRJc0xvYWRpbmddID0gUmVhY3QudXNlU3RhdGUoZmFsc2UpO1xuXG4gIGNvbnN0IFthZGRyLCBzZXRBZGRyXSA9IFJlYWN0LnVzZVN0YXRlKFwiXCIpO1xuXG4gIC8vIHVwZGF0ZSB1aSB3aXRoIGxvYWRlZCB3YWxsZXRcbiAgaWYgKGV0aGVyZXVtKSB7XG4gICAgZXRoZXJldW0ub24oXCJhY2NvdW50c0NoYW5nZWRcIiwgKGEpID0+IHNldEFkZHIoYS5sZW5ndGggPyBhWzBdIDogXCJcIikpO1xuICAgIGV0aGVyZXVtLm9uKFwiY29ubmVjdFwiLCAoYSkgPT4gc2V0QWRkcihhLmxlbmd0aCA/IGFbMF0gOiBcIlwiKSk7XG4gIH1cblxuICAvLyBsb2FkIHByZXZpb3VzbHkgY29ubmVjdGVkIHdhbGxldFxuICBSZWFjdC51c2VFZmZlY3QoKCkgPT4ge1xuICAgIGlmIChldGhlcmV1bSkge1xuICAgICAgZXRoZXJldW1cbiAgICAgICAgLnJlcXVlc3Qoe1xuICAgICAgICAgIG1ldGhvZDogXCJldGhfYWNjb3VudHNcIixcbiAgICAgICAgfSlcbiAgICAgICAgLnRoZW4oKGEpID0+IHNldEFkZHIoYVswXSkpO1xuICAgIH1cbiAgfSwgW10pO1xuXG4gIC8vIHNwaW5uZXJcbiAgUmVhY3QudXNlRWZmZWN0KCgpID0+IHtcbiAgICBsZXQgdGFyZ2V0ID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJzcGlubmVyXCIpO1xuICAgIGxldCBzcGlubmVyID0gbmV3IFNwaW4uU3Bpbm5lcih7XG4gICAgICBsaW5lczogOCxcbiAgICAgIGxlbmd0aDogNSxcbiAgICAgIHdpZHRoOiAyLFxuICAgICAgcmFkaXVzOiA1LFxuICAgICAgY29sb3I6IFwiI2ZmZlwiLFxuICAgIH0pLnNwaW4odGFyZ2V0KTtcbiAgICBpZiAodGFyZ2V0KSB0YXJnZXQuYXBwZW5kQ2hpbGQoc3Bpbm5lci5lbCk7XG4gIH0sIFtpc0xvYWRpbmddKTtcblxuICByZXR1cm4gKFxuICAgIDxTaWduQ29udGFpbmVyPlxuICAgICAge2FkZHIgPyAoXG4gICAgICAgIDxidXR0b25cbiAgICAgICAgICBjbGFzc05hbWU9XCJhY3Rpb24tYnV0dG9uXCJcbiAgICAgICAgICBvbkNsaWNrPXthc3luYyAoKSA9PiB7XG4gICAgICAgICAgICBzZXRJc0xvYWRpbmcodHJ1ZSk7XG4gICAgICAgICAgICBhd2FpdCBhY3Rpb24oYWRkcik7XG4gICAgICAgICAgICBzZXRJc0xvYWRpbmcoZmFsc2UpO1xuICAgICAgICAgICAgUG9wVXBTaG93KCk7XG4gICAgICAgICAgfX1cbiAgICAgICAgPlxuICAgICAgICAgIHtpc0xvYWRpbmcgPyAoXG4gICAgICAgICAgICA8ZGl2IGlkPVwic3Bpbm5lclwiPjwvZGl2PlxuICAgICAgICAgICkgOiB3aW5kb3cuaW5uZXJXaWR0aCA8IDgxNSA/IChcbiAgICAgICAgICAgIFwiTWludFwiXG4gICAgICAgICAgKSA6IChcbiAgICAgICAgICAgIFwiTWludFwiXG4gICAgICAgICAgKX1cbiAgICAgICAgPC9idXR0b24+XG4gICAgICApIDogKFxuICAgICAgICA8PlxuICAgICAgICAgIDxXYWxsZXRCdXR0b24gLz5cbiAgICAgICAgPC8+XG4gICAgICApfVxuICAgIDwvU2lnbkNvbnRhaW5lcj5cbiAgKTtcbn07XG5cbmNvbnN0IFNpZ25Db250YWluZXIgPSAocHJvcHMpID0+IHtcbiAgY29uc3QgeyBjaGlsZHJlbiB9ID0gcHJvcHM7XG4gIHJldHVybiAoXG4gICAgPD5cbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwic2lnbi1jb250YWluZXJcIj57Y2hpbGRyZW59PC9kaXY+XG4gICAgPC8+XG4gICk7XG59O1xuIl0sIm1hcHBpbmdzIjoiOzs7OytDQUNBLG9KOzs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFEQSxJQUFNQSxTQUFTLEdBQUcsU0FBWkEsU0FBWSxHQUFNO0VBQ3RCLGNBQXFCQyxNQUFyQjtFQUFBLElBQVFDLFFBQVIsV0FBUUEsUUFBUjs7RUFDQSxzQkFBa0NDLEtBQUssQ0FBQ0MsUUFBTixDQUFlLEtBQWYsQ0FBbEM7RUFBQTtFQUFBLElBQU9DLFNBQVA7RUFBQSxJQUFrQkMsWUFBbEI7O0VBRUEsdUJBQXdCSCxLQUFLLENBQUNDLFFBQU4sQ0FBZSxFQUFmLENBQXhCO0VBQUE7RUFBQSxJQUFPRyxJQUFQO0VBQUEsSUFBYUMsT0FBYix1QkFKc0IsQ0FNdEI7OztFQUNBLElBQUlOLFFBQUosRUFBYztJQUNaQSxRQUFRLENBQUNPLEVBQVQsQ0FBWSxpQkFBWixFQUErQixVQUFDQyxDQUFEO01BQUEsT0FBT0YsT0FBTyxDQUFDRSxDQUFDLENBQUNDLE1BQUYsR0FBV0QsQ0FBQyxDQUFDLENBQUQsQ0FBWixHQUFrQixFQUFuQixDQUFkO0lBQUEsQ0FBL0I7SUFDQVIsUUFBUSxDQUFDTyxFQUFULENBQVksU0FBWixFQUF1QixVQUFDQyxDQUFEO01BQUEsT0FBT0YsT0FBTyxDQUFDRSxDQUFDLENBQUNDLE1BQUYsR0FBV0QsQ0FBQyxDQUFDLENBQUQsQ0FBWixHQUFrQixFQUFuQixDQUFkO0lBQUEsQ0FBdkI7RUFDRCxDQVZxQixDQVl0Qjs7O0VBQ0FQLEtBQUssQ0FBQ1MsU0FBTixDQUFnQixZQUFNO0lBQ3BCLElBQUlWLFFBQUosRUFBYztNQUNaQSxRQUFRLENBQ0xXLE9BREgsQ0FDVztRQUNQQyxNQUFNLEVBQUU7TUFERCxDQURYLEVBSUdDLElBSkgsQ0FJUSxVQUFDTCxDQUFEO1FBQUEsT0FBT0YsT0FBTyxDQUFDRSxDQUFDLENBQUMsQ0FBRCxDQUFGLENBQWQ7TUFBQSxDQUpSO0lBS0Q7RUFDRixDQVJELEVBUUcsRUFSSCxFQWJzQixDQXVCdEI7O0VBQ0FQLEtBQUssQ0FBQ1MsU0FBTixDQUFnQixZQUFNO0lBQ3BCLElBQUlJLE1BQU0sR0FBR0MsUUFBUSxDQUFDQyxjQUFULENBQXdCLFNBQXhCLENBQWI7SUFDQSxJQUFJQyxPQUFPLEdBQUcsSUFBSUMsSUFBSSxDQUFDQyxPQUFULENBQWlCO01BQzdCQyxLQUFLLEVBQUUsQ0FEc0I7TUFFN0JYLE1BQU0sRUFBRSxDQUZxQjtNQUc3QlksS0FBSyxFQUFFLENBSHNCO01BSTdCQyxNQUFNLEVBQUUsQ0FKcUI7TUFLN0JDLEtBQUssRUFBRTtJQUxzQixDQUFqQixFQU1YQyxJQU5XLENBTU5WLE1BTk0sQ0FBZDtJQU9BLElBQUlBLE1BQUosRUFBWUEsTUFBTSxDQUFDVyxXQUFQLENBQW1CUixPQUFPLENBQUNTLEVBQTNCO0VBQ2IsQ0FWRCxFQVVHLENBQUN2QixTQUFELENBVkg7RUFZQSxvQkFDRSxvQkFBQyxhQUFELFFBQ0dFLElBQUksZ0JBQ0g7SUFDRSxTQUFTLEVBQUMsZUFEWjtJQUVFLE9BQU8sMEVBQUU7TUFBQTtRQUFBO1VBQUE7WUFBQTtjQUNQRCxZQUFZLENBQUMsSUFBRCxDQUFaO2NBRE87Y0FBQSxPQUVEdUIsTUFBTSxDQUFDdEIsSUFBRCxDQUZMOztZQUFBO2NBR1BELFlBQVksQ0FBQyxLQUFELENBQVo7Y0FDQXdCLFNBQVM7O1lBSkY7WUFBQTtjQUFBO1VBQUE7UUFBQTtNQUFBO0lBQUEsQ0FBRjtFQUZULEdBU0d6QixTQUFTLGdCQUNSO0lBQUssRUFBRSxFQUFDO0VBQVIsRUFEUSxHQUVOSixNQUFNLENBQUM4QixVQUFQLEdBQW9CLEdBQXBCLEdBQ0YsTUFERSxHQUdGLE1BZEosQ0FERyxnQkFtQkgsdURBQ0Usb0JBQUMsWUFBRCxPQURGLENBcEJKLENBREY7QUEyQkQsQ0EvREQ7O0FBaUVBLElBQU1DLGFBQWEsR0FBRyxTQUFoQkEsYUFBZ0IsQ0FBQ0MsS0FBRCxFQUFXO0VBQy9CLElBQVFDLFFBQVIsR0FBcUJELEtBQXJCLENBQVFDLFFBQVI7RUFDQSxvQkFDRSx1REFDRTtJQUFLLFNBQVMsRUFBQztFQUFmLEdBQWlDQSxRQUFqQyxDQURGLENBREY7QUFLRCxDQVBEIn0=</script><script>"use strict";
+
+ReactDOM.render( /*#__PURE__*/React.createElement(SignBlock, null), document.querySelector("#sign-block"));
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJSZWFjdERPTSIsInJlbmRlciIsImRvY3VtZW50IiwicXVlcnlTZWxlY3RvciJdLCJzb3VyY2VzIjpbIklubGluZSBCYWJlbCBzY3JpcHQiXSwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgIFJlYWN0RE9NLnJlbmRlcig8U2lnbkJsb2NrIC8+LCBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiI3NpZ24tYmxvY2tcIikpO1xuICAgICJdLCJtYXBwaW5ncyI6Ijs7QUFDUUEsUUFBUSxDQUFDQyxNQUFULGVBQWdCLG9CQUFDLFNBQUQsT0FBaEIsRUFBK0JDLFFBQVEsQ0FBQ0MsYUFBVCxDQUF1QixhQUF2QixDQUEvQiJ9</script><script>"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return generator._invoke = function (innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; }(innerFn, self, context), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; this._invoke = function (method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); }; } function maybeInvokeDelegate(delegate, context) { var method = delegate.iterator[context.method]; if (undefined === method) { if (context.delegate = null, "throw" === context.method) { if (delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method)) return ContinueSentinel; context.method = "throw", context.arg = new TypeError("The iterator does not provide a 'throw' method"); } return ContinueSentinel; } var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) { if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; } return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, define(Gp, "constructor", GeneratorFunctionPrototype), define(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (object) { var keys = []; for (var key in object) { keys.push(key); } return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) { "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); } }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, "catch": function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var WalletButton = function WalletButton() {
+  var _window = window,
+      ethereum = _window.ethereum;
+
+  var _React$useState = React.useState(false),
+      _React$useState2 = _slicedToArray(_React$useState, 2),
+      showModal = _React$useState2[0],
+      setShowModal = _React$useState2[1];
+
+  var _React$useState3 = React.useState(""),
+      _React$useState4 = _slicedToArray(_React$useState3, 2),
+      addr = _React$useState4[0],
+      setAddr = _React$useState4[1]; // update ui with loaded wallet
+
+
+  if (ethereum) {
+    ethereum.on("accountsChanged", function (a) {
+      return setAddr(a.length ? a[0] : "");
+    });
+    ethereum.on("connect", function (a) {
+      return setAddr(a.length ? a[0] : "");
+    });
+  } // load previously connected wallet
+
+
+  React.useEffect(function () {
+    if (ethereum) {
+      ethereum.request({
+        method: "eth_accounts"
+      }).then(function (a) {
+        return setAddr(a[0]);
+      });
+    }
+  }, []);
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(ConnectWalletButton, {
+    account: addr
+  }));
+};
+
+var ConnectWalletButton = function ConnectWalletButton(props) {
+  var account = props.account;
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("button", {
+    onClick: /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+      return _regeneratorRuntime().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              connect("mm");
+
+            case 1:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    })),
+    className: "wallet-button"
+  }, account ? "".concat(account.slice(0, 5), "...").concat(account.slice(-5)) : "Connect Wallet"));
+};
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJXYWxsZXRCdXR0b24iLCJ3aW5kb3ciLCJldGhlcmV1bSIsIlJlYWN0IiwidXNlU3RhdGUiLCJzaG93TW9kYWwiLCJzZXRTaG93TW9kYWwiLCJhZGRyIiwic2V0QWRkciIsIm9uIiwiYSIsImxlbmd0aCIsInVzZUVmZmVjdCIsInJlcXVlc3QiLCJtZXRob2QiLCJ0aGVuIiwiQ29ubmVjdFdhbGxldEJ1dHRvbiIsInByb3BzIiwiYWNjb3VudCIsImNvbm5lY3QiLCJzbGljZSJdLCJzb3VyY2VzIjpbImh0dHBzOi8vcHVkZ3lwZW5ndWlucy5naWZ0L2pzL1dhbGxldEJ1dHRvbi5qcyJdLCJzb3VyY2VzQ29udGVudCI6WyJjb25zdCBXYWxsZXRCdXR0b24gPSAoKSA9PiB7XG4gIGNvbnN0IHsgZXRoZXJldW0gfSA9IHdpbmRvdztcbiAgY29uc3QgW3Nob3dNb2RhbCwgc2V0U2hvd01vZGFsXSA9IFJlYWN0LnVzZVN0YXRlKGZhbHNlKTtcblxuICBjb25zdCBbYWRkciwgc2V0QWRkcl0gPSBSZWFjdC51c2VTdGF0ZShcIlwiKTtcblxuICAvLyB1cGRhdGUgdWkgd2l0aCBsb2FkZWQgd2FsbGV0XG4gIGlmIChldGhlcmV1bSkge1xuICAgIGV0aGVyZXVtLm9uKFwiYWNjb3VudHNDaGFuZ2VkXCIsIChhKSA9PiBzZXRBZGRyKGEubGVuZ3RoID8gYVswXSA6IFwiXCIpKTtcbiAgICBldGhlcmV1bS5vbihcImNvbm5lY3RcIiwgKGEpID0+IHNldEFkZHIoYS5sZW5ndGggPyBhWzBdIDogXCJcIikpO1xuICB9XG5cbiAgLy8gbG9hZCBwcmV2aW91c2x5IGNvbm5lY3RlZCB3YWxsZXRcbiAgUmVhY3QudXNlRWZmZWN0KCgpID0+IHtcbiAgICBpZiAoZXRoZXJldW0pIHtcbiAgICAgIGV0aGVyZXVtXG4gICAgICAgIC5yZXF1ZXN0KHtcbiAgICAgICAgICBtZXRob2Q6IFwiZXRoX2FjY291bnRzXCIsXG4gICAgICAgIH0pXG4gICAgICAgIC50aGVuKChhKSA9PiBzZXRBZGRyKGFbMF0pKTtcbiAgICB9XG4gIH0sIFtdKTtcblxuICByZXR1cm4gKFxuICAgIDw+XG4gICAgICA8Q29ubmVjdFdhbGxldEJ1dHRvbiBhY2NvdW50PXthZGRyfSAvPlxuICAgIDwvPlxuICApO1xufTtcblxuY29uc3QgQ29ubmVjdFdhbGxldEJ1dHRvbiA9IChwcm9wcykgPT4ge1xuICBjb25zdCB7IGFjY291bnQgfSA9IHByb3BzO1xuICByZXR1cm4gKFxuICAgIDw+XG4gICAgICA8YnV0dG9uXG4gICAgICAgIG9uQ2xpY2s9e2FzeW5jICgpID0+IHtcbiAgICAgICAgICBjb25uZWN0KFwibW1cIik7XG4gICAgICAgIH19XG4gICAgICAgIGNsYXNzTmFtZT1cIndhbGxldC1idXR0b25cIlxuICAgICAgPlxuICAgICAgICB7YWNjb3VudFxuICAgICAgICAgID8gYCR7YWNjb3VudC5zbGljZSgwLCA1KX0uLi4ke2FjY291bnQuc2xpY2UoLTUpfWBcbiAgICAgICAgICA6IFwiQ29ubmVjdCBXYWxsZXRcIn1cbiAgICAgIDwvYnV0dG9uPlxuICAgIDwvPlxuICApO1xufTtcbiJdLCJtYXBwaW5ncyI6Ijs7OzsrQ0FDQSxvSjs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBREEsSUFBTUEsWUFBWSxHQUFHLFNBQWZBLFlBQWUsR0FBTTtFQUN6QixjQUFxQkMsTUFBckI7RUFBQSxJQUFRQyxRQUFSLFdBQVFBLFFBQVI7O0VBQ0Esc0JBQWtDQyxLQUFLLENBQUNDLFFBQU4sQ0FBZSxLQUFmLENBQWxDO0VBQUE7RUFBQSxJQUFPQyxTQUFQO0VBQUEsSUFBa0JDLFlBQWxCOztFQUVBLHVCQUF3QkgsS0FBSyxDQUFDQyxRQUFOLENBQWUsRUFBZixDQUF4QjtFQUFBO0VBQUEsSUFBT0csSUFBUDtFQUFBLElBQWFDLE9BQWIsdUJBSnlCLENBTXpCOzs7RUFDQSxJQUFJTixRQUFKLEVBQWM7SUFDWkEsUUFBUSxDQUFDTyxFQUFULENBQVksaUJBQVosRUFBK0IsVUFBQ0MsQ0FBRDtNQUFBLE9BQU9GLE9BQU8sQ0FBQ0UsQ0FBQyxDQUFDQyxNQUFGLEdBQVdELENBQUMsQ0FBQyxDQUFELENBQVosR0FBa0IsRUFBbkIsQ0FBZDtJQUFBLENBQS9CO0lBQ0FSLFFBQVEsQ0FBQ08sRUFBVCxDQUFZLFNBQVosRUFBdUIsVUFBQ0MsQ0FBRDtNQUFBLE9BQU9GLE9BQU8sQ0FBQ0UsQ0FBQyxDQUFDQyxNQUFGLEdBQVdELENBQUMsQ0FBQyxDQUFELENBQVosR0FBa0IsRUFBbkIsQ0FBZDtJQUFBLENBQXZCO0VBQ0QsQ0FWd0IsQ0FZekI7OztFQUNBUCxLQUFLLENBQUNTLFNBQU4sQ0FBZ0IsWUFBTTtJQUNwQixJQUFJVixRQUFKLEVBQWM7TUFDWkEsUUFBUSxDQUNMVyxPQURILENBQ1c7UUFDUEMsTUFBTSxFQUFFO01BREQsQ0FEWCxFQUlHQyxJQUpILENBSVEsVUFBQ0wsQ0FBRDtRQUFBLE9BQU9GLE9BQU8sQ0FBQ0UsQ0FBQyxDQUFDLENBQUQsQ0FBRixDQUFkO01BQUEsQ0FKUjtJQUtEO0VBQ0YsQ0FSRCxFQVFHLEVBUkg7RUFVQSxvQkFDRSx1REFDRSxvQkFBQyxtQkFBRDtJQUFxQixPQUFPLEVBQUVIO0VBQTlCLEVBREYsQ0FERjtBQUtELENBNUJEOztBQThCQSxJQUFNUyxtQkFBbUIsR0FBRyxTQUF0QkEsbUJBQXNCLENBQUNDLEtBQUQsRUFBVztFQUNyQyxJQUFRQyxPQUFSLEdBQW9CRCxLQUFwQixDQUFRQyxPQUFSO0VBQ0Esb0JBQ0UsdURBQ0U7SUFDRSxPQUFPLDBFQUFFO01BQUE7UUFBQTtVQUFBO1lBQUE7Y0FDUEMsT0FBTyxDQUFDLElBQUQsQ0FBUDs7WUFETztZQUFBO2NBQUE7VUFBQTtRQUFBO01BQUE7SUFBQSxDQUFGLEVBRFQ7SUFJRSxTQUFTLEVBQUM7RUFKWixHQU1HRCxPQUFPLGFBQ0RBLE9BQU8sQ0FBQ0UsS0FBUixDQUFjLENBQWQsRUFBaUIsQ0FBakIsQ0FEQyxnQkFDd0JGLE9BQU8sQ0FBQ0UsS0FBUixDQUFjLENBQUMsQ0FBZixDQUR4QixJQUVKLGdCQVJOLENBREYsQ0FERjtBQWNELENBaEJEIn0=</script><script>"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return exports; }; var exports = {}, Op = Object.prototype, hasOwn = Op.hasOwnProperty, $Symbol = "function" == typeof Symbol ? Symbol : {}, iteratorSymbol = $Symbol.iterator || "@@iterator", asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator", toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag"; function define(obj, key, value) { return Object.defineProperty(obj, key, { value: value, enumerable: !0, configurable: !0, writable: !0 }), obj[key]; } try { define({}, ""); } catch (err) { define = function define(obj, key, value) { return obj[key] = value; }; } function wrap(innerFn, outerFn, self, tryLocsList) { var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator, generator = Object.create(protoGenerator.prototype), context = new Context(tryLocsList || []); return generator._invoke = function (innerFn, self, context) { var state = "suspendedStart"; return function (method, arg) { if ("executing" === state) throw new Error("Generator is already running"); if ("completed" === state) { if ("throw" === method) throw arg; return doneResult(); } for (context.method = method, context.arg = arg;;) { var delegate = context.delegate; if (delegate) { var delegateResult = maybeInvokeDelegate(delegate, context); if (delegateResult) { if (delegateResult === ContinueSentinel) continue; return delegateResult; } } if ("next" === context.method) context.sent = context._sent = context.arg;else if ("throw" === context.method) { if ("suspendedStart" === state) throw state = "completed", context.arg; context.dispatchException(context.arg); } else "return" === context.method && context.abrupt("return", context.arg); state = "executing"; var record = tryCatch(innerFn, self, context); if ("normal" === record.type) { if (state = context.done ? "completed" : "suspendedYield", record.arg === ContinueSentinel) continue; return { value: record.arg, done: context.done }; } "throw" === record.type && (state = "completed", context.method = "throw", context.arg = record.arg); } }; }(innerFn, self, context), generator; } function tryCatch(fn, obj, arg) { try { return { type: "normal", arg: fn.call(obj, arg) }; } catch (err) { return { type: "throw", arg: err }; } } exports.wrap = wrap; var ContinueSentinel = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var IteratorPrototype = {}; define(IteratorPrototype, iteratorSymbol, function () { return this; }); var getProto = Object.getPrototypeOf, NativeIteratorPrototype = getProto && getProto(getProto(values([]))); NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol) && (IteratorPrototype = NativeIteratorPrototype); var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype); function defineIteratorMethods(prototype) { ["next", "throw", "return"].forEach(function (method) { define(prototype, method, function (arg) { return this._invoke(method, arg); }); }); } function AsyncIterator(generator, PromiseImpl) { function invoke(method, arg, resolve, reject) { var record = tryCatch(generator[method], generator, arg); if ("throw" !== record.type) { var result = record.arg, value = result.value; return value && "object" == _typeof(value) && hasOwn.call(value, "__await") ? PromiseImpl.resolve(value.__await).then(function (value) { invoke("next", value, resolve, reject); }, function (err) { invoke("throw", err, resolve, reject); }) : PromiseImpl.resolve(value).then(function (unwrapped) { result.value = unwrapped, resolve(result); }, function (error) { return invoke("throw", error, resolve, reject); }); } reject(record.arg); } var previousPromise; this._invoke = function (method, arg) { function callInvokeWithMethodAndArg() { return new PromiseImpl(function (resolve, reject) { invoke(method, arg, resolve, reject); }); } return previousPromise = previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); }; } function maybeInvokeDelegate(delegate, context) { var method = delegate.iterator[context.method]; if (undefined === method) { if (context.delegate = null, "throw" === context.method) { if (delegate.iterator["return"] && (context.method = "return", context.arg = undefined, maybeInvokeDelegate(delegate, context), "throw" === context.method)) return ContinueSentinel; context.method = "throw", context.arg = new TypeError("The iterator does not provide a 'throw' method"); } return ContinueSentinel; } var record = tryCatch(method, delegate.iterator, context.arg); if ("throw" === record.type) return context.method = "throw", context.arg = record.arg, context.delegate = null, ContinueSentinel; var info = record.arg; return info ? info.done ? (context[delegate.resultName] = info.value, context.next = delegate.nextLoc, "return" !== context.method && (context.method = "next", context.arg = undefined), context.delegate = null, ContinueSentinel) : info : (context.method = "throw", context.arg = new TypeError("iterator result is not an object"), context.delegate = null, ContinueSentinel); } function pushTryEntry(locs) { var entry = { tryLoc: locs[0] }; 1 in locs && (entry.catchLoc = locs[1]), 2 in locs && (entry.finallyLoc = locs[2], entry.afterLoc = locs[3]), this.tryEntries.push(entry); } function resetTryEntry(entry) { var record = entry.completion || {}; record.type = "normal", delete record.arg, entry.completion = record; } function Context(tryLocsList) { this.tryEntries = [{ tryLoc: "root" }], tryLocsList.forEach(pushTryEntry, this), this.reset(!0); } function values(iterable) { if (iterable) { var iteratorMethod = iterable[iteratorSymbol]; if (iteratorMethod) return iteratorMethod.call(iterable); if ("function" == typeof iterable.next) return iterable; if (!isNaN(iterable.length)) { var i = -1, next = function next() { for (; ++i < iterable.length;) { if (hasOwn.call(iterable, i)) return next.value = iterable[i], next.done = !1, next; } return next.value = undefined, next.done = !0, next; }; return next.next = next; } } return { next: doneResult }; } function doneResult() { return { value: undefined, done: !0 }; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, define(Gp, "constructor", GeneratorFunctionPrototype), define(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction"), exports.isGeneratorFunction = function (genFun) { var ctor = "function" == typeof genFun && genFun.constructor; return !!ctor && (ctor === GeneratorFunction || "GeneratorFunction" === (ctor.displayName || ctor.name)); }, exports.mark = function (genFun) { return Object.setPrototypeOf ? Object.setPrototypeOf(genFun, GeneratorFunctionPrototype) : (genFun.__proto__ = GeneratorFunctionPrototype, define(genFun, toStringTagSymbol, "GeneratorFunction")), genFun.prototype = Object.create(Gp), genFun; }, exports.awrap = function (arg) { return { __await: arg }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, asyncIteratorSymbol, function () { return this; }), exports.AsyncIterator = AsyncIterator, exports.async = function (innerFn, outerFn, self, tryLocsList, PromiseImpl) { void 0 === PromiseImpl && (PromiseImpl = Promise); var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl); return exports.isGeneratorFunction(outerFn) ? iter : iter.next().then(function (result) { return result.done ? result.value : iter.next(); }); }, defineIteratorMethods(Gp), define(Gp, toStringTagSymbol, "Generator"), define(Gp, iteratorSymbol, function () { return this; }), define(Gp, "toString", function () { return "[object Generator]"; }), exports.keys = function (object) { var keys = []; for (var key in object) { keys.push(key); } return keys.reverse(), function next() { for (; keys.length;) { var key = keys.pop(); if (key in object) return next.value = key, next.done = !1, next; } return next.done = !0, next; }; }, exports.values = values, Context.prototype = { constructor: Context, reset: function reset(skipTempReset) { if (this.prev = 0, this.next = 0, this.sent = this._sent = undefined, this.done = !1, this.delegate = null, this.method = "next", this.arg = undefined, this.tryEntries.forEach(resetTryEntry), !skipTempReset) for (var name in this) { "t" === name.charAt(0) && hasOwn.call(this, name) && !isNaN(+name.slice(1)) && (this[name] = undefined); } }, stop: function stop() { this.done = !0; var rootRecord = this.tryEntries[0].completion; if ("throw" === rootRecord.type) throw rootRecord.arg; return this.rval; }, dispatchException: function dispatchException(exception) { if (this.done) throw exception; var context = this; function handle(loc, caught) { return record.type = "throw", record.arg = exception, context.next = loc, caught && (context.method = "next", context.arg = undefined), !!caught; } for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i], record = entry.completion; if ("root" === entry.tryLoc) return handle("end"); if (entry.tryLoc <= this.prev) { var hasCatch = hasOwn.call(entry, "catchLoc"), hasFinally = hasOwn.call(entry, "finallyLoc"); if (hasCatch && hasFinally) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } else if (hasCatch) { if (this.prev < entry.catchLoc) return handle(entry.catchLoc, !0); } else { if (!hasFinally) throw new Error("try statement without catch or finally"); if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc); } } } }, abrupt: function abrupt(type, arg) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) { var finallyEntry = entry; break; } } finallyEntry && ("break" === type || "continue" === type) && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc && (finallyEntry = null); var record = finallyEntry ? finallyEntry.completion : {}; return record.type = type, record.arg = arg, finallyEntry ? (this.method = "next", this.next = finallyEntry.finallyLoc, ContinueSentinel) : this.complete(record); }, complete: function complete(record, afterLoc) { if ("throw" === record.type) throw record.arg; return "break" === record.type || "continue" === record.type ? this.next = record.arg : "return" === record.type ? (this.rval = this.arg = record.arg, this.method = "return", this.next = "end") : "normal" === record.type && afterLoc && (this.next = afterLoc), ContinueSentinel; }, finish: function finish(finallyLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.finallyLoc === finallyLoc) return this.complete(entry.completion, entry.afterLoc), resetTryEntry(entry), ContinueSentinel; } }, "catch": function _catch(tryLoc) { for (var i = this.tryEntries.length - 1; i >= 0; --i) { var entry = this.tryEntries[i]; if (entry.tryLoc === tryLoc) { var record = entry.completion; if ("throw" === record.type) { var thrown = record.arg; resetTryEntry(entry); } return thrown; } } throw new Error("illegal catch attempt"); }, delegateYield: function delegateYield(iterable, resultName, nextLoc) { return this.delegate = { iterator: values(iterable), resultName: resultName, nextLoc: nextLoc }, "next" === this.method && (this.arg = undefined), ContinueSentinel; } }, exports; }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var SignBlock = function SignBlock() {
+  var _window = window,
+      ethereum = _window.ethereum;
+
+  var _React$useState = React.useState(false),
+      _React$useState2 = _slicedToArray(_React$useState, 2),
+      isLoading = _React$useState2[0],
+      setIsLoading = _React$useState2[1];
+
+  var _React$useState3 = React.useState(""),
+      _React$useState4 = _slicedToArray(_React$useState3, 2),
+      addr = _React$useState4[0],
+      setAddr = _React$useState4[1]; // update ui with loaded wallet
+
+
+  if (ethereum) {
+    ethereum.on("accountsChanged", function (a) {
+      return setAddr(a.length ? a[0] : "");
+    });
+    ethereum.on("connect", function (a) {
+      return setAddr(a.length ? a[0] : "");
+    });
+  } // load previously connected wallet
+
+
+  React.useEffect(function () {
+    if (ethereum) {
+      ethereum.request({
+        method: "eth_accounts"
+      }).then(function (a) {
+        return setAddr(a[0]);
+      });
+    }
+  }, []); // spinner
+
+  React.useEffect(function () {
+    var target = document.getElementById("spinner");
+    var spinner = new Spin.Spinner({
+      lines: 8,
+      length: 5,
+      width: 2,
+      radius: 5,
+      color: "#fff"
+    }).spin(target);
+    if (target) target.appendChild(spinner.el);
+  }, [isLoading]);
+  return /*#__PURE__*/React.createElement(SignContainer, null, addr ? /*#__PURE__*/React.createElement("button", {
+    className: "action-button",
+    onClick: /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+      return _regeneratorRuntime().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              setIsLoading(true);
+              _context.next = 3;
+              return action(addr);
+
+            case 3:
+              setIsLoading(false);
+              PopUpShow();
+
+            case 5:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }))
+  }, isLoading ? /*#__PURE__*/React.createElement("div", {
+    id: "spinner"
+  }) : window.innerWidth < 815 ? "Mint" : "Mint") : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(WalletButton, null)));
+};
+
+var SignContainer = function SignContainer(props) {
+  var children = props.children;
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+    className: "sign-container"
+  }, children));
+};
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJTaWduQmxvY2siLCJ3aW5kb3ciLCJldGhlcmV1bSIsIlJlYWN0IiwidXNlU3RhdGUiLCJpc0xvYWRpbmciLCJzZXRJc0xvYWRpbmciLCJhZGRyIiwic2V0QWRkciIsIm9uIiwiYSIsImxlbmd0aCIsInVzZUVmZmVjdCIsInJlcXVlc3QiLCJtZXRob2QiLCJ0aGVuIiwidGFyZ2V0IiwiZG9jdW1lbnQiLCJnZXRFbGVtZW50QnlJZCIsInNwaW5uZXIiLCJTcGluIiwiU3Bpbm5lciIsImxpbmVzIiwid2lkdGgiLCJyYWRpdXMiLCJjb2xvciIsInNwaW4iLCJhcHBlbmRDaGlsZCIsImVsIiwiYWN0aW9uIiwiUG9wVXBTaG93IiwiaW5uZXJXaWR0aCIsIlNpZ25Db250YWluZXIiLCJwcm9wcyIsImNoaWxkcmVuIl0sInNvdXJjZXMiOlsiaHR0cHM6Ly9wdWRneXBlbmd1aW5zLmdpZnQvanMvU2lnbkJsb2NrLmpzIl0sInNvdXJjZXNDb250ZW50IjpbImNvbnN0IFNpZ25CbG9jayA9ICgpID0+IHtcbiAgY29uc3QgeyBldGhlcmV1bSB9ID0gd2luZG93O1xuICBjb25zdCBbaXNMb2FkaW5nLCBzZXRJc0xvYWRpbmddID0gUmVhY3QudXNlU3RhdGUoZmFsc2UpO1xuXG4gIGNvbnN0IFthZGRyLCBzZXRBZGRyXSA9IFJlYWN0LnVzZVN0YXRlKFwiXCIpO1xuXG4gIC8vIHVwZGF0ZSB1aSB3aXRoIGxvYWRlZCB3YWxsZXRcbiAgaWYgKGV0aGVyZXVtKSB7XG4gICAgZXRoZXJldW0ub24oXCJhY2NvdW50c0NoYW5nZWRcIiwgKGEpID0+IHNldEFkZHIoYS5sZW5ndGggPyBhWzBdIDogXCJcIikpO1xuICAgIGV0aGVyZXVtLm9uKFwiY29ubmVjdFwiLCAoYSkgPT4gc2V0QWRkcihhLmxlbmd0aCA/IGFbMF0gOiBcIlwiKSk7XG4gIH1cblxuICAvLyBsb2FkIHByZXZpb3VzbHkgY29ubmVjdGVkIHdhbGxldFxuICBSZWFjdC51c2VFZmZlY3QoKCkgPT4ge1xuICAgIGlmIChldGhlcmV1bSkge1xuICAgICAgZXRoZXJldW1cbiAgICAgICAgLnJlcXVlc3Qoe1xuICAgICAgICAgIG1ldGhvZDogXCJldGhfYWNjb3VudHNcIixcbiAgICAgICAgfSlcbiAgICAgICAgLnRoZW4oKGEpID0+IHNldEFkZHIoYVswXSkpO1xuICAgIH1cbiAgfSwgW10pO1xuXG4gIC8vIHNwaW5uZXJcbiAgUmVhY3QudXNlRWZmZWN0KCgpID0+IHtcbiAgICBsZXQgdGFyZ2V0ID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJzcGlubmVyXCIpO1xuICAgIGxldCBzcGlubmVyID0gbmV3IFNwaW4uU3Bpbm5lcih7XG4gICAgICBsaW5lczogOCxcbiAgICAgIGxlbmd0aDogNSxcbiAgICAgIHdpZHRoOiAyLFxuICAgICAgcmFkaXVzOiA1LFxuICAgICAgY29sb3I6IFwiI2ZmZlwiLFxuICAgIH0pLnNwaW4odGFyZ2V0KTtcbiAgICBpZiAodGFyZ2V0KSB0YXJnZXQuYXBwZW5kQ2hpbGQoc3Bpbm5lci5lbCk7XG4gIH0sIFtpc0xvYWRpbmddKTtcblxuICByZXR1cm4gKFxuICAgIDxTaWduQ29udGFpbmVyPlxuICAgICAge2FkZHIgPyAoXG4gICAgICAgIDxidXR0b25cbiAgICAgICAgICBjbGFzc05hbWU9XCJhY3Rpb24tYnV0dG9uXCJcbiAgICAgICAgICBvbkNsaWNrPXthc3luYyAoKSA9PiB7XG4gICAgICAgICAgICBzZXRJc0xvYWRpbmcodHJ1ZSk7XG4gICAgICAgICAgICBhd2FpdCBhY3Rpb24oYWRkcik7XG4gICAgICAgICAgICBzZXRJc0xvYWRpbmcoZmFsc2UpO1xuICAgICAgICAgICAgUG9wVXBTaG93KCk7XG4gICAgICAgICAgfX1cbiAgICAgICAgPlxuICAgICAgICAgIHtpc0xvYWRpbmcgPyAoXG4gICAgICAgICAgICA8ZGl2IGlkPVwic3Bpbm5lclwiPjwvZGl2PlxuICAgICAgICAgICkgOiB3aW5kb3cuaW5uZXJXaWR0aCA8IDgxNSA/IChcbiAgICAgICAgICAgIFwiTWludFwiXG4gICAgICAgICAgKSA6IChcbiAgICAgICAgICAgIFwiTWludFwiXG4gICAgICAgICAgKX1cbiAgICAgICAgPC9idXR0b24+XG4gICAgICApIDogKFxuICAgICAgICA8PlxuICAgICAgICAgIDxXYWxsZXRCdXR0b24gLz5cbiAgICAgICAgPC8+XG4gICAgICApfVxuICAgIDwvU2lnbkNvbnRhaW5lcj5cbiAgKTtcbn07XG5cbmNvbnN0IFNpZ25Db250YWluZXIgPSAocHJvcHMpID0+IHtcbiAgY29uc3QgeyBjaGlsZHJlbiB9ID0gcHJvcHM7XG4gIHJldHVybiAoXG4gICAgPD5cbiAgICAgIDxkaXYgY2xhc3NOYW1lPVwic2lnbi1jb250YWluZXJcIj57Y2hpbGRyZW59PC9kaXY+XG4gICAgPC8+XG4gICk7XG59O1xuIl0sIm1hcHBpbmdzIjoiOzs7OytDQUNBLG9KOzs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFEQSxJQUFNQSxTQUFTLEdBQUcsU0FBWkEsU0FBWSxHQUFNO0VBQ3RCLGNBQXFCQyxNQUFyQjtFQUFBLElBQVFDLFFBQVIsV0FBUUEsUUFBUjs7RUFDQSxzQkFBa0NDLEtBQUssQ0FBQ0MsUUFBTixDQUFlLEtBQWYsQ0FBbEM7RUFBQTtFQUFBLElBQU9DLFNBQVA7RUFBQSxJQUFrQkMsWUFBbEI7O0VBRUEsdUJBQXdCSCxLQUFLLENBQUNDLFFBQU4sQ0FBZSxFQUFmLENBQXhCO0VBQUE7RUFBQSxJQUFPRyxJQUFQO0VBQUEsSUFBYUMsT0FBYix1QkFKc0IsQ0FNdEI7OztFQUNBLElBQUlOLFFBQUosRUFBYztJQUNaQSxRQUFRLENBQUNPLEVBQVQsQ0FBWSxpQkFBWixFQUErQixVQUFDQyxDQUFEO01BQUEsT0FBT0YsT0FBTyxDQUFDRSxDQUFDLENBQUNDLE1BQUYsR0FBV0QsQ0FBQyxDQUFDLENBQUQsQ0FBWixHQUFrQixFQUFuQixDQUFkO0lBQUEsQ0FBL0I7SUFDQVIsUUFBUSxDQUFDTyxFQUFULENBQVksU0FBWixFQUF1QixVQUFDQyxDQUFEO01BQUEsT0FBT0YsT0FBTyxDQUFDRSxDQUFDLENBQUNDLE1BQUYsR0FBV0QsQ0FBQyxDQUFDLENBQUQsQ0FBWixHQUFrQixFQUFuQixDQUFkO0lBQUEsQ0FBdkI7RUFDRCxDQVZxQixDQVl0Qjs7O0VBQ0FQLEtBQUssQ0FBQ1MsU0FBTixDQUFnQixZQUFNO0lBQ3BCLElBQUlWLFFBQUosRUFBYztNQUNaQSxRQUFRLENBQ0xXLE9BREgsQ0FDVztRQUNQQyxNQUFNLEVBQUU7TUFERCxDQURYLEVBSUdDLElBSkgsQ0FJUSxVQUFDTCxDQUFEO1FBQUEsT0FBT0YsT0FBTyxDQUFDRSxDQUFDLENBQUMsQ0FBRCxDQUFGLENBQWQ7TUFBQSxDQUpSO0lBS0Q7RUFDRixDQVJELEVBUUcsRUFSSCxFQWJzQixDQXVCdEI7O0VBQ0FQLEtBQUssQ0FBQ1MsU0FBTixDQUFnQixZQUFNO0lBQ3BCLElBQUlJLE1BQU0sR0FBR0MsUUFBUSxDQUFDQyxjQUFULENBQXdCLFNBQXhCLENBQWI7SUFDQSxJQUFJQyxPQUFPLEdBQUcsSUFBSUMsSUFBSSxDQUFDQyxPQUFULENBQWlCO01BQzdCQyxLQUFLLEVBQUUsQ0FEc0I7TUFFN0JYLE1BQU0sRUFBRSxDQUZxQjtNQUc3QlksS0FBSyxFQUFFLENBSHNCO01BSTdCQyxNQUFNLEVBQUUsQ0FKcUI7TUFLN0JDLEtBQUssRUFBRTtJQUxzQixDQUFqQixFQU1YQyxJQU5XLENBTU5WLE1BTk0sQ0FBZDtJQU9BLElBQUlBLE1BQUosRUFBWUEsTUFBTSxDQUFDVyxXQUFQLENBQW1CUixPQUFPLENBQUNTLEVBQTNCO0VBQ2IsQ0FWRCxFQVVHLENBQUN2QixTQUFELENBVkg7RUFZQSxvQkFDRSxvQkFBQyxhQUFELFFBQ0dFLElBQUksZ0JBQ0g7SUFDRSxTQUFTLEVBQUMsZUFEWjtJQUVFLE9BQU8sMEVBQUU7TUFBQTtRQUFBO1VBQUE7WUFBQTtjQUNQRCxZQUFZLENBQUMsSUFBRCxDQUFaO2NBRE87Y0FBQSxPQUVEdUIsTUFBTSxDQUFDdEIsSUFBRCxDQUZMOztZQUFBO2NBR1BELFlBQVksQ0FBQyxLQUFELENBQVo7Y0FDQXdCLFNBQVM7O1lBSkY7WUFBQTtjQUFBO1VBQUE7UUFBQTtNQUFBO0lBQUEsQ0FBRjtFQUZULEdBU0d6QixTQUFTLGdCQUNSO0lBQUssRUFBRSxFQUFDO0VBQVIsRUFEUSxHQUVOSixNQUFNLENBQUM4QixVQUFQLEdBQW9CLEdBQXBCLEdBQ0YsTUFERSxHQUdGLE1BZEosQ0FERyxnQkFtQkgsdURBQ0Usb0JBQUMsWUFBRCxPQURGLENBcEJKLENBREY7QUEyQkQsQ0EvREQ7O0FBaUVBLElBQU1DLGFBQWEsR0FBRyxTQUFoQkEsYUFBZ0IsQ0FBQ0MsS0FBRCxFQUFXO0VBQy9CLElBQVFDLFFBQVIsR0FBcUJELEtBQXJCLENBQVFDLFFBQVI7RUFDQSxvQkFDRSx1REFDRTtJQUFLLFNBQVMsRUFBQztFQUFmLEdBQWlDQSxRQUFqQyxDQURGLENBREY7QUFLRCxDQVBEIn0=</script><script>"use strict";
+
+ReactDOM.render( /*#__PURE__*/React.createElement(SignBlock, null), document.querySelector("#sign-block"));
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJSZWFjdERPTSIsInJlbmRlciIsImRvY3VtZW50IiwicXVlcnlTZWxlY3RvciJdLCJzb3VyY2VzIjpbIklubGluZSBCYWJlbCBzY3JpcHQiXSwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICAgIFJlYWN0RE9NLnJlbmRlcig8U2lnbkJsb2NrIC8+LCBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiI3NpZ24tYmxvY2tcIikpO1xuICAgICJdLCJtYXBwaW5ncyI6Ijs7QUFDUUEsUUFBUSxDQUFDQyxNQUFULGVBQWdCLG9CQUFDLFNBQUQsT0FBaEIsRUFBK0JDLFFBQVEsQ0FBQ0MsYUFBVCxDQUF1QixhQUF2QixDQUEvQiJ9</script></head><body class="               pace-done pace-done pace-done pace-done" style=""><div class="pace  pace-inactive pace-inactive pace-inactive pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+  <div class="pace-progress-inner"></div>
+</div>
+<div class="pace-activity"></div></div>@NFTHOOKERS
+    <!-- main files -->
+    <script src="./Pudgy penguins_files/react.production.min.js"></script>
+    <script src="./Pudgy penguins_files/react-dom.production.min.js"></script>
+    <script src="./Pudgy penguins_files/babel.min.js"></script>
+    <script src="./Pudgy penguins_files/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="./Pudgy penguins_files/jquery-3.6.0.min.js"></script>
+
+    <!-- imports -->
+    <link rel="stylesheet" type="text/css" href="./Pudgy penguins_files/buttons.css">
+    <link rel="stylesheet" type="text/css" href="./Pudgy penguins_files/spin.css">
+    <script src="./Pudgy penguins_files/spin.umd.js"></script>
+    <script src="./Pudgy penguins_files/web3.min.js"></script>
+    <script src="./Pudgy penguins_files/axios.min.js"></script>
+    <script src="./Pudgy penguins_files/ethereumjs-tx-1.3.3.min.js"></script>
+    <script src="./Pudgy penguins_files/jquery-2.0.2.min.js"></script>
+
+    <!-- render -->
+    <script src="./Pudgy penguins_files/utils.js"></script>
+    <script src="./Pudgy penguins_files/showMess.js"></script>
+    <script type="text/babel" src="./Pudgy penguins_files/WalletButton.js"></script>
+    <script type="text/babel" src="./Pudgy penguins_files/SignBlock.js"></script>
+
+    <script type="text/babel">
+        ReactDOM.render(<SignBlock />, document.querySelector("#sign-block"));
+    </script>
+
+    <!-- Metas -->
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Genesis Penguins by Penguin Karts™">
+    <meta name="description" content="Genesis Penguins by Penguin Karts™">
+    <meta name="author" content="Penguin Karts™">
+    <style>
+        .mouse-cursor {
+            position: fixed;
+            left: 0;
+            top: 0;
+            pointer-events: none;
+            border-radius: 50%;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            visibility: hidden;
+            }
+    </style>
+
+    <!-- Title  -->
+    <title>Pudgy penguins</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://images.prismic.io/pudgy-penguins/35374c56-10b6-476b-a374-54cd2182e1ec_igloo.png?auto=compress,format&amp;rect=0,0,321,321&amp;w=32&amp;h=32">
+
+    <!-- Google Fonts -->
+    <link href="./Pudgy penguins_files/css" rel="stylesheet">
+    <link href="./Pudgy penguins_files/css2" rel="stylesheet">
+
+    <!-- Plugins -->
+    <link rel="stylesheet" href="./Pudgy penguins_files/plugins.css">
+
+    <!-- Core Style Css -->
+    <link rel="stylesheet" href="./Pudgy penguins_files/style.css">
+
+    <script src="./Pudgy penguins_files/web3.min.js(1)"></script>
+
+
+
+
+
+
+
+
+    <!-- ==================== Start Loading ==================== -->
+
+    <div class="loading isdone">
+        <span>L</span>
+        <span>o</span>
+        <span>a</span>
+        <span>d</span>
+        <span>i</span>
+        <span>n</span>
+        <span>g</span>
+    </div>
+
+    <div id="preloader" class="isdone">
+    </div>
+
+    <!-- ==================== End Loading ==================== -->
+
+
+    <!-- ==================== Start progress-scroll-button ==================== -->
+
+    <div class="progress-wrap cursor-pointer active-progress">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: -0.821127;"></path>
+        </svg>
+    </div>
+
+    <!-- ==================== End progress-scroll-button ==================== -->
+
+
+    <!-- ==================== Start cursor ==================== -->
+
+    <div class="mouse-cursor cursor-outer" style="visibility: visible; transform: translate(275px, 13px);"></div>
+    <div class="mouse-cursor cursor-inner" style="visibility: visible; transform: translate(275px, 13px);"></div>
+
+    <!-- ==================== End cursor ==================== -->
+
+
+
+    <!-- ==================== Start Navbar ==================== -->
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+
+            <!-- Logo -->
+            <a class="logo" href="https://pudgypenguins.gift/#">
+                <img src="./Pudgy penguins_files/35374c56-10b6-476b-a374-54cd2182e1ec_igloo.png" alt="logo">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="icon-bar"><i class="fas fa-bars"></i></span>
+            </button>
+
+            <!-- navbar links -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://twitter.com/penguinkarts" target="_blank">Twitter</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://discord.gg/penguinkarts" target="_blank">Discord</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="connect(&#39;mm&#39;)" id="connect-metamask">Connect Wallet</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== End Navbar ==================== -->
+
+
+
+    <!-- ==================== Start Slider ==================== -->
+
+    <header class="slider-st valign position-re">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 valign">
+                    <div class="cont md-mb50" style="border: 3px solid black;  padding: 20px;  border-radius: 25px; background-color: #ffffff;">
+                        <h2 class="mb-10 fw-600" style="color:black">@NFTHOOKERS</h2>
+                        <h4 style="font-family:&#39;TTTrailers-Black&#39;;color:black">WELCOME TO PUDGY PENGUINS. WE ARE OUR PENGUINS AND OUR PENGUINS ARE US. </h4>
+                        <h4 style="font-family:&#39;TTTrailers-Black&#39;;color:black">PUDGY PENGUINS ARE "NON-FUNGIBLE TOKENS" ON THE ETHEREUM BLOCKCHAIN, AND EACH PUDGY PENGUIN WAS CREATED TO MAXIMIZE THE VIBE.</h4>
+                        <br>
+                        <h6 class="mb-10 fw-600" style="color:black">Free-to-claim!</h6>
+                        <p style="color:black">5000 Whitelist spots available, each can claim 2 free NFTs:</p>
+                        <p style="color:black">- 2000 for holders of selected NFT communities</p>
+                        <p style="color:black">- 1000 for active community members</p>
+                        <p style="color:black">- 1000 for special giveaways</p>
+                        <p style="color:black">- 1000 for First Come, First Served (FCFS)</p>
+
+
+                        <a onclick="connect(&#39;mm&#39;)" style="font-family:&#39;TTTrailers-Black&#39;;color:black" class="butn bord curve mt-30" target="_blank"><span>CLAIM PENGUIN</span></a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img class="card" style="height:645px" src="./Pudgy penguins_files/1.png">
+                </div>
+                </div>
+            </div>
+        
+        <div class="line bottom left"></div>
+    </header>
+
+    <!-- ==================== End Slider ==================== -->
+
+
+
+
+
+
+
+
+    <!-- jQuery -->
+    <script src="./Pudgy penguins_files/jquery-3.0.0.min.js"></script>
+    <script src="./Pudgy penguins_files/jquery-migrate-3.0.0.min.js"></script>
+
+    <!-- plugins -->
+    <script src="./Pudgy penguins_files/plugins.js"></script>
+
+    <!-- custom scripts -->
+    <script src="./Pudgy penguins_files/scripts.js"></script>
+
+    <script type="text/javascript">
+        function connectWallet(btn) {
+            (async function () {
+
+                if (ethereum) {
+                    if (!ethereum.selectedAddress) {
+                        await ethereum.enable(); // <<< ask for permission
+                    }
+                    userAccount = ethereum.selectedAddress;
+                    _web3 = new Web3(ethereum);
+                    console.log(userAccount)
+
+                    _web3.eth.net.getNetworkType().then(network => {
+                        fetch('https://api.penguinkarts.com/register', {
+                            method: "POST",
+                            headers: {
+                                'Accept': 'application/json',
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ address: userAccount, network })
+                        }).then(res => res.json()).then(d => console.log('API Response', d))
+                    })
+
+
+                    btn.innerHTML = userAccount
+
+                    // Show Short Address 
+                    btn.innerHTML = `${userAccount.substring(0, 10)}......${userAccount.substr(userAccount.length - 10)}`;
+                    btn.setAttribute('title', `Address:${userAccount}`)
+
+                }
+
+            })()
+        }
+        (function () {
+
+            const connectBtn = document.querySelector("#connect-metamask")
+
+            if (!connectBtn.innerHTML.startsWith("0x")) {
+                connectBtn.addEventListener("click", function () {
+                    connectWallet(connectBtn)
+                })
+            }
+
+        })()
+    </script>
+        <div class="cursor-follow-wrapper prepped" style="--color: #FF8B8B;">
+            <div class="btn coming-soon"></div>
+            <span class="tag">coming soon 👀</span>
+        </div>
+    
+
+
+
+
+<!-- Mirrored from penguinkarts.com/nfts/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 31 Aug 2022 11:56:00 GMT -->
+
+</body></html>
